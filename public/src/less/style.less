@@ -1,0 +1,151 @@
+html,body {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Work Sans', Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.7;
+  padding-bottom: 5em;
+
+  @media screen and (max-width: 960px) {
+    font-size: 18px;
+  }
+  @media screen and (max-width: 640px) {
+    font-size: 16px;
+  }
+}
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease-out, border 0.3s ease-out;
+  border-bottom-width: 2px;
+  border-bottom-color: rgba(255,255,255,0.2);
+  border-bottom-style: dashed;
+}
+a:hover,
+a:active,
+a:focus {
+  color: #fff;
+  text-decoration: none;
+  border-bottom-color: #ff0000;
+}
+::-moz-selection {
+  background: #ff0000;
+}
+::selection {
+  background: #ff0000;
+}
+h1, h2, h3, h4 {
+  font-weight: 400;
+  margin-bottom: 0.4em;
+  line-height: 1.1;
+}
+.container {
+  max-width: 42em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.row {
+  padding: 1em 0;
+}
+.btn {
+  padding: 0.9em 1.25em;
+  border-width: 2px;
+  border-color: rgba(255,255,255,0.15);
+  border-style: dashed;
+  transition: border 0.2s ease-out;
+  display: inline-block;
+  vertical-align: middle;
+}
+.btn:hover, .btn:active, .btn:focus {
+  border-color: #ff0000;
+}
+
+.logo {
+  right: 0;
+  padding: 0;
+  position: absolute;
+  text-align: right;
+  top: 0;
+  max-width: 100%;
+  width: 360px;
+}
+.header {
+  background-color: #ff0000;
+  padding-top: 2em;
+  padding-bottom: 2em;
+
+  ::-moz-selection {
+    background: #000;
+    color: #fff;
+  }
+  ::selection {
+    background: #000;
+    color: #fff;
+  }
+
+  @media screen and (max-width: 960px) {
+    padding-top: 120px;
+  }
+}
+h1 {
+  font-size: 6em;
+  font-weight: 700;
+  text-transform: lowercase;
+  letter-spacing: -0.05em;
+  margin-left: -0.08em;
+  line-height: 1;
+}
+h2 {
+  font-size: 1.4em;
+}
+p {
+  line-height: 1.8;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  max-width: 30em;
+}
+.heading {
+  text-shadow: 0 0 0 rgba(0,0,0,0);
+  transition: text-shadow 2s ease;
+
+  &:hover,
+  &:focus,
+  &:hover:focus {
+    text-shadow: 0.04em 0.04em 0 #ff0000, 0.125em 0.125em 0 #000;
+  }
+}
+.subheading {
+  line-height: 1.6;
+}
+
+.cta {
+  margin-top: 4em;
+}
+
+small,
+.small {
+  font-size: 0.7em;
+}
+
+hr {
+  border: 0px;
+  border-top: 2px dashed rgba(255,255,255,0.1);
+  margin: 2em 0;
+}
+
+@media screen and (max-width: 640px) {
+  .heading { font-size: 3.8em; }
+  .event-details > li { width: 100%; display: block; margin-bottom: 1.5em; margin-right: 0; }
+  a,.btn { border-width: 1px; }
+  a { padding-bottom: 0.15em; }
+  .btn.rsvp { display: block;width:100%;margin-top: 2em;margin-bottom:4em;float:none;text-align: center;padding:1em 0;}
+}
