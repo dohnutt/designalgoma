@@ -107,6 +107,7 @@ h1 {
 }
 h2 {
   font-size: 1.4em;
+  font-weight: 700;
 }
 p {
   line-height: 1.8;
@@ -146,6 +147,76 @@ hr {
   border: 0px;
   border-top: 2px dashed rgba(255,255,255,0.1);
   margin: 2em 0;
+}
+
+.section {
+  + .section,
+  + .footer {
+    margin-top: 1em;
+  }
+}
+
+.clearfix {
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+    width: 100%;
+    clear: both;
+  }
+}
+
+.events-list {
+  padding-bottom: 1em;
+  margin-left: -1%;
+
+  article {
+    box-sizing: border-box;
+    padding: 1em;
+    margin: 0.5em 1%;
+    border: 2px dashed rgba(255,255,255,0.1);
+    display: block;
+    width: 31.333%;
+    float: left;
+    line-height: 1.4;
+
+    span {
+      display: block;
+
+      + span {
+        margin-top: 0.5em;
+      }
+    }
+
+    &:first-child {
+      border-color: red;
+      padding-top: 0.625em;
+
+      &:before {
+        content: 'See you soon!';
+        text-transform: uppercase;
+        background-color: rgba(255,255,255,0.075);
+        padding: 0.5em;
+        margin-bottom: 0.9em;
+        font-size: 0.5em;
+        font-weight: bold;
+        letter-spacing: 0.15em;
+        line-height: 1;
+        display: inline-block;
+      }
+    }
+  }
+  .date {
+    font-weight: bold;
+  }
+  .summary {
+    font-size: 1.6em;
+    line-height: 1.1;
+    margin-bottom: 0.25em;
+  }
+  .location {
+    font-size: 0.8em;
+  }
 }
 
 @media screen and (max-width: 640px) {
