@@ -62,7 +62,7 @@
 	maxDate.setFullYear(maxDate.getFullYear() + 1);
 
 	formatGoogleCalendar.init({
-		calendarUrl: 'https://www.googleapis.com/calendar/v3/calendars/br6vtp5bcjfgtvijlsclt0oeu0@group.calendar.google.com/events?key=AIzaSyBQFaIpKMuozBk5bixcOQG2w0tHYHbFeK0',
+		calendarUrl: 'https://www.googleapis.com/calendar/v3/calendars/br6vtp5bcjfgtvijlsclt0oeu0@group.calendar.google.com/events?key=' + process.env.GOOGLE_CALENDAR_KEY,
 		upcoming: true,
 		past: true,
 		sameDayTimes: true,
