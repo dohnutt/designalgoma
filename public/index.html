@@ -60,28 +60,33 @@
 
 	var maxDate = new Date();
 	maxDate.setFullYear(maxDate.getFullYear() + 1);
-
-	formatGoogleCalendar.init({
-		calendarUrl: 'https://www.googleapis.com/calendar/v3/calendars/br6vtp5bcjfgtvijlsclt0oeu0@group.calendar.google.com/events?key=' + process.env.GOOGLE_CALENDAR_KEY,
-		upcoming: true,
-		past: true,
-		sameDayTimes: true,
-		dayNames: true,
-		upcomingTopN: 5,
-		pastTopN: 3,
-		itemsTagName: 'article',
-		upcomingSelector: '.js-upcoming-events',
-		pastSelector: '.js-past-events',
-		recurringEvents: true,
-		upcomingHeading: '<h2>Upcoming events</h2>',
-		format: [
-			'*summary*',
-			'*date*',
-			'*location*',
-			'*description*',
-		],
-		timeMax: maxDate.toISOString(),
+	
+	fetch('.netlify/functions/api')
+	.then(response => response.json())
+	.then(json => {
+		formatGoogleCalendar.init({
+			calendarUrl: 'https://www.googleapis.com/calendar/v3/calendars/br6vtp5bcjfgtvijlsclt0oeu0@group.calendar.google.com/events?key=' + json.calendarApi,
+			upcoming: true,
+			past: true,
+			sameDayTimes: true,
+			dayNames: true,
+			upcomingTopN: 5,
+			pastTopN: 3,
+			itemsTagName: 'article',
+			upcomingSelector: '.js-upcoming-events',
+			pastSelector: '.js-past-events',
+			recurringEvents: true,
+			upcomingHeading: '<h2>Upcoming events</h2>',
+			format: [
+				'*summary*',
+				'*date*',
+				'*location*',
+				'*description*',
+			],
+			timeMax: maxDate.toISOString(),
+		});
 	});
+	
 	</script>
 	
 </body>
